@@ -1,0 +1,16 @@
+<div class="url-shortener">
+    <h2>Encurtador de URL</h2>
+    <input [(ngModel)]="longUrl" placeholder="Digite a URL longa" />
+    <button (click)="shortenUrl()" [disabled]="loading">
+      Encurtar
+    </button>
+  
+    <div *ngIf="loading" class="spinner"></div>
+  
+    <div *ngIf="shortUrl && !loading">
+      <p>URL Curta: <a [href]="shortUrl" target="_blank">{{ shortUrl }}</a></p>
+      <img *ngIf="qrCodeImage" [src]="'data:image/png;base64,' + qrCodeImage" alt="QR Code" />
+      <button (click)="redirectToShortUrl()">Ir para URL Curta</button>
+    </div>
+  </div>
+  
