@@ -14,7 +14,7 @@ export interface URLResponse {
   providedIn: 'root'
 })
 export class UrlService {
-  private apiUrl = 'http://localhost:8081';
+  private apiUrl = 'https://curtaurl-backend.onrender.com';
 
   constructor(private http: HttpClient) {}
 
